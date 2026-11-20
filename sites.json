@@ -1,0 +1,19 @@
+{
+  "intervaloSegundos": 60,
+  "timeoutMs": 8000,
+  "lentoMs": 1500,
+  "cacheCommitsHoras": 6,
+  "sites": [
+    { "id": "danielpro", "nome": "Danielpro", "url": "https://danielpro.dev", "repo": null },
+    { "id": "tako", "nome": "Tako", "url": "https://tako.danielpro.dev", "repo": "danielcodemoz/tako-site" },
+    { "id": "aulaview", "nome": "AulaView", "url": "https://aulaview.danielpro.dev", "repo": "danielcodemoz/aulaview-site" },
+    { "id": "simlab", "nome": "SimLab", "url": "https://simlab.danielpro.dev", "repo": "danielcodemoz/simlab-site" },
+    { "id": "speeddisc", "nome": "SpeedDisc", "url": "https://speeddisc.danielpro.dev", "repo": "danielcodemoz/speeddisc" },
+    { "id": "folderx", "nome": "FolderX", "url": "https://folderx.danielpro.dev", "repo": "danielcodemoz/folderx-site" },
+    { "id": "youtubedownloader", "nome": "YouTube Downloader", "url": "https://youtubedownloader.danielpro.dev", "repo": "danielcodemoz/youtubedownloader-site" },
+    { "id": "monolog", "nome": "Monolog", "url": "https://monolog.danielpro.dev", "repo": "danielcodemoz/monolog-site" },
+    { "id": "soueducare", "nome": "Sou Educare", "url": "https://soueducare.com", "repo": null },
+    { "id": "kazi", "nome": "Kazi RH", "url": "https://kazirh.danielpro.dev", "repo": null },
+    { "id": "hvacec", "nome": "HVACEC", "url": "https://hvacec.co.mz", "repo": null }
+  ]
+}

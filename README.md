@@ -1,13 +1,9 @@
-# site-template — sites novos em *.danielpro.dev
+# estado-sites — painel de estado dos sites do Daniel
 
-Modelo para o Dots (Codex) criar e publicar um site estático novo sozinho.
+Site estático (sem build, sem servidor, sem segredos) em https://estado-sites.danielpro.dev.
 
-## 3 passos do Daniel
-1. **GitHub → New repository → Repository template: `danielcodemoz/site-template`**, escolhe um nome e deixa **Public**.
-2. **Codex → Environments → Create environment** para esse repositório.
-3. **Escreve a tarefa** no Codex (ex.: "Constrói o site de X e publica em x.danielpro.dev").
+- `sites.json` — única lista de sites (nome, URL, repo público opcional) e parâmetros (intervalo, timeout, cache).
+- `status.js` — lógica pura (estados, resumo, cache, limites da API). Teste: `node test/status.test.js`.
+- `app.js` / `style.css` / `index.html` — interface (PT, claro/escuro, 390 px, acessível).
 
-O Dots lê o `AGENTS.md`, põe o subdomínio em `danielpro-site.json`, abre o PR num ramo `codex/...`,
-o workflow faz o merge e o servidor publica em poucos minutos com HTTPS.
-
-Para desligar a criação automática no servidor: `systemctl disable --now novo-site-auto.timer`.
+Verificação feita no navegador: com CORS lê o código HTTP; sem CORS usa `no-cors` + ping por imagem e mostra "provável".
