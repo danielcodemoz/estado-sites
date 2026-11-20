@@ -31,3 +31,6 @@ O Daniel autoriza-te a construir e **publicar** este site do início ao fim, sem
 ## Reportar no fim
 Link do site, último commit publicado (`git rev-parse --short HEAD` em main), URL do PR, páginas/secções,
 o que verificaste (saída do curl) e o que ficou por fazer.
+
+## Handoff
+- 2026-11-20 — ramo `claude/status-dashboard` (PR aberto, não fundido): painel de estado estático em `index.html` + `style.css` + `app.js`; lista de sites só em `sites.json`; lógica pura em `status.js` com teste `node test/status.test.js` (sem dependências). Estado certo só quando o site envia CORS; caso contrário "provável" (no-cors / ping por imagem). Commits via API pública do GitHub (cache 6 h em localStorage). Em aberto: confirmar o mapeamento site→repo de `sites.json` (soueducare, hvacec, danielpro e kazi não têm repo público); ver se os sites passam a enviar `Access-Control-Allow-Origin` para o estado deixar de ser "provável". Kazi: URL `https://kazirh.danielpro.dev` (vem do README do repo privado `kazi-rh`).

@@ -3,8 +3,51 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Em breve</title>
-<style>body{font-family:system-ui,sans-serif;display:grid;place-items:center;min-height:100vh;margin:0;background:#0f172a;color:#e2e8f0}main{text-align:center;padding:2rem}</style>
+<meta name="color-scheme" content="light dark">
+<title>Estado dos sites — Danielpro</title>
+<meta name="description" content="Painel de estado dos sites do Daniel: online/offline, tempo de resposta e último commit.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f766e'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<script>try{var t=localStorage.getItem('tema');if(t==='light'||t==='dark')document.documentElement.dataset.tema=t}catch(e){}</script>
 </head>
-<body><main><h1>Em breve</h1><p>Site em construção — Danielpro.</p></main></body>
+<body>
+<a class="saltar" href="#sites">Saltar para os sites</a>
+<header class="topo">
+  <div>
+    <h1>Estado dos sites</h1>
+    <p class="sub">Verificação feita no teu navegador, a cada 60 s.</p>
+  </div>
+  <div class="acoes">
+    <button type="button" id="btn-atualizar">Atualizar agora</button>
+    <button type="button" id="btn-tema" aria-pressed="false">Tema</button>
+  </div>
+</header>
+
+<main>
+  <section class="resumo" aria-labelledby="resumo-titulo">
+    <h2 id="resumo-titulo" class="so-leitor">Resumo</h2>
+    <p id="resumo-texto" class="resumo-texto neutro" role="status" aria-live="polite" aria-atomic="true">A verificar…</p>
+    <div class="barra" aria-hidden="true"><span id="barra-bom"></span><span id="barra-mau"></span></div>
+    <p class="resumo-meta"><span id="ultima">Última verificação: —</span> · <span id="proxima">Próxima em —</span></p>
+  </section>
+
+  <p id="erro-lista" class="aviso" hidden>Não foi possível carregar <code>sites.json</code>.</p>
+  <ul id="sites" class="grelha" aria-label="Lista de sites"></ul>
+
+  <details class="nota">
+    <summary>Como é feita a verificação?</summary>
+    <p>O navegador não pode ler sempre o código HTTP de outro site (CORS). Se puder, o estado é certo (<strong>Online</strong> / <strong>Offline</strong>).
+    Se não puder, tentamos um pedido <code>no-cors</code> e um ping por imagem: se o servidor responder, o estado é <strong>Provavelmente online</strong>;
+    se nada responder, <strong>Provavelmente offline</strong> (pode ser a tua rede ou um bloqueador). O tempo “≈” é aproximado.
+    Datas de commit vêm da API pública do GitHub (só repositórios públicos), em cache durante 6 h.</p>
+  </details>
+</main>
+
+<footer class="rodape">
+  <p>Painel estático de <a href="https://danielpro.dev">danielpro.dev</a> · lista de sites em <a href="sites.json">sites.json</a></p>
+</footer>
+
+<script src="status.js"></script>
+<script src="app.js"></script>
+</body>
 </html>
